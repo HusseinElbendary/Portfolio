@@ -22,7 +22,7 @@ function headerHoverEnter(e){
 	{
 		if(window.innerWidth<575)
 		{
-			listItem1.style.fontSize="2.3rem";
+			listItem1.style.fontSize="2.66rem";
 		}
 		else{
 		listItem1.style.fontSize="4rem";}
@@ -31,7 +31,7 @@ function headerHoverEnter(e){
 	else if(e.target.id==="listItem2"){
 		if(window.innerWidth<575)
 		{
-			listItem2.style.fontSize="2.3rem";
+			listItem2.style.fontSize="2.66rem";
 		}
 		else{
 		listItem2.style.fontSize="4rem";}
