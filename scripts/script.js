@@ -65,8 +65,9 @@ function headerHoverleave(e){
 
 function toggleMusic()
 {
-	arrow.style.transition=" opacity 1.5s";
+	arrow.style.transition=" opacity 1.5s transform 1.5s ";
 	arrow.style.opacity = '0';
+	arrow.style.transform = 'scale(0.5)';
 	if(audio.paused)
 	{
 		audio.play();
