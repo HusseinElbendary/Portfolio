@@ -4,6 +4,10 @@ var arrow=document.getElementById("arrow");
 var songPannel=document.getElementById("songPanel");
 var socialMedia=document.getElementsByClassName("socialMedia");
 var navLinks=document.getElementsByClassName("navLinks");
+var listItem1=document.getElementById("listItem1");
+var listItem2=document.getElementById("listItem2");
+
+
 var timeOut;
 hideSong();
 FooterSize();
@@ -13,6 +17,52 @@ headerSize();
 audio.pause();
 // var t;
 // var pausePose;
+function headerHoverEnter(e){
+	if(e.target.id==="listItem1")
+	{
+		if(window.innerWidth<575)
+		{
+			listItem1.style.fontSize="2.66rem";
+		}
+		else{
+		listItem1.style.fontSize="4rem";}
+		listItem1.style.color="#ED6868";
+	}
+	else if(e.target.id==="listItem2"){
+		if(window.innerWidth<575)
+		{
+			listItem2.style.fontSize="2.66rem";
+		}
+		else{
+		listItem2.style.fontSize="4rem";}
+		listItem2.style.color="#ED6868";
+	}
+	
+}
+
+function headerHoverleave(e){
+	if(e.target.id==="listItem1")
+	{
+		if(window.innerWidth<575)
+		{
+			listItem1.style.fontSize="2rem";
+		}
+		else{
+		listItem1.style.fontSize="3rem";}
+		listItem1.style.color="black";
+	}
+	else if(e.target.id==="listItem2"){
+		if(window.innerWidth<575)
+		{
+			listItem2.style.fontSize="2rem";
+		}
+		else{
+		listItem2.style.fontSize="3rem";}
+		listItem2.style.color="black";
+	}
+	
+}
+
 function toggleMusic()
 {
 	arrow.style.transition=" opacity 1.5s";
@@ -87,10 +137,14 @@ function FooterSize(){
 function headerSize(){
 	if(window.innerWidth<575)
 	{
-		navLinks[0].style.fontSize="2rem";
+		// navLinks[0].style.fontSize="2rem";
+		listItem1.style.fontSize="2rem";
+		listItem2.style.fontSize="2rem";
 	}
 	else{
-		navLinks[0].style.fontSize="3rem";
+		// navLinks[0].style.fontSize="3rem";
+		listItem1.style.fontSize="3rem";
+		listItem2.style.fontSize="3rem";
 	}
 
 }
@@ -99,9 +153,14 @@ function resizeElements()
 {
 	FooterSize();
 	headerSize();
+
 }
 
 audioButton.addEventListener("click",toggleMusic);
 audioButton.addEventListener("mouseenter",showSong);
 audioButton.addEventListener("mouseleave",hideSong);
+listItem1.addEventListener("mouseenter",headerHoverEnter);
+listItem2.addEventListener("mouseenter",headerHoverEnter);
+listItem1.addEventListener("mouseleave",headerHoverleave);
+listItem2.addEventListener("mouseleave",headerHoverleave);
 window.addEventListener("resize",resizeElements);

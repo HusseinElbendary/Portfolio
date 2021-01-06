@@ -26,10 +26,10 @@ body{
 	transition: font-size 1.5s, color 2.5s;
 	
 }
-.navLinks li:hover{
+/*.navLinks li:hover{
 	font-size: 4rem;
 	color:	#ED6868;
-}
+}*/
 
 
 .navLinks a{
